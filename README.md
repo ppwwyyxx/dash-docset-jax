@@ -1,4 +1,4 @@
-# JAX+Flax offline documentation in [dash](https://kapeli.com/dash)/[zeal](https://github.com/zealdocs/zeal) docset browser.
+## JAX+Flax offline documentation in [dash](https://kapeli.com/dash)/[zeal](https://github.com/zealdocs/zeal) docset browser
 
 ![screenshot](/screenshot.jpg)
 
