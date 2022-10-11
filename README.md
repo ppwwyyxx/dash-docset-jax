@@ -37,3 +37,10 @@ Or download the latest release [here](https://github.com/ppwwyyxx/dash-docset-ja
    doc2dash -f -d ./ -u https://jax.readthedocs.io/ --name jax -i icon.png $HTML_DIR
    ```
    This will generate `jax.docset` that can be installed into Zeal/Dash.
+
+
+## Others
+
+Latex renders correctly:
+
+![math](/math.jpg)
