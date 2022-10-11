@@ -23,14 +23,16 @@ Or download the latest release [here](https://github.com/ppwwyyxx/dash-docset-ja
    sphinx-build -b html -D nb_execution_mode=off ./ ./build/html -j auto
 
    cd /tmp/jax/docs
-   cp -rv /tmp/flax/docs/{flax.*.rst,_autosummary} ./
+   cp -rv /tmp/flax/docs/api_reference/{flax.*.rst,_autosummary} ./
    # Install necessary doc dependencies from requirements.txt, then:
    sphinx-build -b html -D nb_execution_mode=off ./ ./build/html -j auto
    ```
 1. `cd` to this project, then run the following to beautify the docs:
    ```
-   HTML_DIR=/tmp/jax/docs/build/html
+   export HTML_DIR=/tmp/jax/docs/build/html
+   # Beautify the docs for more friendly display:
    ./transform.py $HTML_DIR
+   # Use monospace font for code:
    sed -i 's/var(--pst-font-family-monospace)/monospace/g' $HTML_DIR/**/*.css
    doc2dash -f -d ./ -u https://jax.readthedocs.io/ --name jax -i icon.png $HTML_DIR
    ```
