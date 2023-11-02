@@ -31,13 +31,17 @@ def process(fname):
     tree = HTMLParser(html)
     for selector in [
             "div.bd-sidebar",
-            "div.header-article",
-            "footer.footer-article",
+            "div.bd-sidebar-secondary",
+            "div.onlyprint",
+            "div.bd-header-article",
+            "footer.bd-footer-content",
             "script"]:
         for node in tree.css(selector):
             node.decompose()
 
     soup = bs4.BeautifulSoup(tree.html, "lxml")
+    # Theme needed for pygments.css -> syntax highlighting
+    soup.findAll('html')[0].attrs['data-theme'] = 'light'
     for mc in soup.findAll(attrs={"id": 'main-content'}):
         # Change its id because CSS limits its width to 70%.
         # We don't want this limit inside zeal/dash.
